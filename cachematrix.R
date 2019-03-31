@@ -4,16 +4,16 @@
 ## Write a short comment describing this function
 
 makeCacheMatrix <- function(x = matrix()) {
-  inv <- NULL                             ## initialize inv as NULL; will hold value of matrix inverse 
-  set <- function(y) {                    ## define the set function to assign new 
-    x <<- y                             ## value of matrix in parent environment
-    inv <<- NULL                        ## if there is a new matrix, reset inv to NULL
+  inv <- NULL                            
+  set <- function(y) {                    # define the set function to assign new 
+    x <<- y                             # value of matrix in parent environment
+    inv <<- NULL                        # if there is a new matrix, reset inv to NULL
   }
-  get <- function() x                     ## define the get fucntion - returns value of the matrix argument
+  get <- function() x                     #get the value of the Matrix
   
-  setinverse <- function(inverse) inv <<- inverse  ## assigns value of inv in parent environment
-  getinverse <- function() inv                     ## gets the value of inv where called
-  list(set = set, get = get, setinverse = setinverse, getinverse = getinverse)  ## you need this in order to refer 
+  setinverse <- function(inverse) inv <<- inverse  #set the value of the invertible matrix
+  getinverse <- function() inv                     #get the value of the invertible matrix
+  list(set = set, get = get, setinverse = setinverse, getinverse = getinverse) 
   ## to the functions with the $ operator
 }
 
